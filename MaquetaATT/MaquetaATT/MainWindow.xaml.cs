@@ -24,7 +24,7 @@ namespace MaquetaATT
 		public void inicializaObjetos()
 		{
 			txtUsuario.Text = HINT_USUARIO;
-			txtPassword.Text = HINT_PASSWORD;
+			//txtPassword.Text = HINT_PASSWORD;
 		}
 
 		private void txtUsuario_GotFocus(object sender, RoutedEventArgs e)
@@ -39,12 +39,13 @@ namespace MaquetaATT
 
 		private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
 		{
-			if (txtPassword.Text == HINT_PASSWORD) { txtPassword.Clear(); }
+			txtPassword.Clear(); 
 		}
 
 		private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
 		{
-			if (txtPassword.Text == "") { txtPassword.Text = HINT_PASSWORD; }
+			txtPassword.Pas
+			//if (txtPassword.Text == "") { txtPassword.Text = HINT_PASSWORD; }
 		}
 
 		private void imgLogo_Loaded(object sender, RoutedEventArgs e)

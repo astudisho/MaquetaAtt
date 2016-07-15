@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MaquetaATT"
         mc:Ignorable="d"
-        Title="WpfCaptura" Height="600" Width="800">
-    <DockPanel>
-        <StackPanel Margin="20,20" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,5">Cliente:</TextBlock>
-                <TextBox Name="txtNombreAp1" Margin="10,5" MinWidth="200" HorizontalAlignment="Stretch">Apellido paterno</TextBox>
-                <TextBox Name="txtNombreAp2" Margin="10,5" MinWidth="200" HorizontalAlignment="Stretch">Apellido materno</TextBox>
-                <TextBox Name="txtNombreNombres" Margin="10,5" MinWidth="200">Apellido paterno</TextBox>
-            </StackPanel>            
+        Title="WpfCaptura" 
+        Height="600" Width="1000" MinHeight="600" MinWidth="800">
+    <DockPanel HorizontalAlignment="Stretch" Width="Auto">
+        <StackPanel Margin="20,20" HorizontalAlignment="Stretch" Width="Auto" >
+            <DockPanel Margin="10,10">
+                <Label FontSize="18" VerticalAlignment="Center">Cliente: </Label>
+                <UniformGrid Columns="3" Width="Auto" HorizontalAlignment="Stretch">
+                    <TextBox Name="txtClienteAp1" Grid.Column="0" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center" FontSize="18" GotFocus="txtClienteAp1_GotFocus" LostFocus="txtClienteAp1_LostFocus"/>
+                    <TextBox Name="txtClienteAp2" Grid.Column="1" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center"  FontSize="18" GotFocus="txtClienteAp2_GotFocus" LostFocus="txtClienteAp2_LostFocus"/>
+                    <TextBox Name="txtClienteNombres" Grid.Column="2" Width="Auto" HorizontalAlignment="Stretch" Margin="10"  TextAlignment="Center" FontSize="18" GotFocus="txtClienteNombres_GotFocus" LostFocus="txtClienteNombres_LostFocus"/>
+                </UniformGrid>
+            </DockPanel>            
         </StackPanel>
     </DockPanel>
 </Window>
