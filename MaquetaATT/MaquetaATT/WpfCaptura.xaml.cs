@@ -21,7 +21,8 @@ namespace MaquetaATT
 	{
 		private const string HINT_CLIENTE_AP1 = "Apellido paterno",
 							 HINT_CLIENTE_AP2 = "Apellido materno",
-							 HINT_CLIENTE_NOMBRES = "Nombres";
+							 HINT_CLIENTE_NOMBRES = "Nombres",
+							 HINT_NUM_FIJIO_LADA = "Lada";
 
 		public WpfCaptura()
 		{
@@ -30,6 +31,8 @@ namespace MaquetaATT
 			txtClienteAp1.Text = HINT_CLIENTE_AP1;
 			txtClienteAp2.Text = HINT_CLIENTE_AP2;
 			txtClienteNombres.Text = HINT_CLIENTE_NOMBRES;
+			txtNumFijoLada.Text = HINT_NUM_FIJIO_LADA;
+
 		}
 
 		private void txtClienteAp1_GotFocus(object sender, RoutedEventArgs e)
@@ -60,6 +63,27 @@ namespace MaquetaATT
 		private void txtClienteNombres_LostFocus(object sender, RoutedEventArgs e)
 		{
 			delegateLostFocus(txtClienteNombres, HINT_CLIENTE_NOMBRES);
+		}
+
+		private void ComboBox_Loaded(object sender, RoutedEventArgs e)
+		{
+			List<short> data = new List<short>();
+
+			for (short i = 1; i <= 1000; i++)
+				data.Add(i);
+
+			cmbNumeroLineas.ItemsSource = data;
+			cmbNumeroLineas.SelectedIndex = 0;
+		}
+
+		private void txtNumFijoLada_LostFocus(object sender, RoutedEventArgs e)
+		{
+			delegateLostFocus(txtNumFijoLada, HINT_NUM_FIJIO_LADA);
+		}
+
+		private void txtNumFijoLada_GotFocus(object sender, RoutedEventArgs e)
+		{
+			delegateGotFocus(txtNumFijoLada, HINT_NUM_FIJIO_LADA);
 		}
 
 		private void delegateGotFocus(TextBox campoTexto, string hint)

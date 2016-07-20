@@ -12,7 +12,7 @@ namespace MaquetaATT
 	public partial class MainWindow : Window
 	{
 		private const string HINT_USUARIO = "Usuario";
-		private const string HINT_PASSWORD = "Password";
+		private const string HINT_PASSWORD = "!@#$%^&*()";
 
 		public MainWindow()
 		{
@@ -24,7 +24,7 @@ namespace MaquetaATT
 		public void inicializaObjetos()
 		{
 			txtUsuario.Text = HINT_USUARIO;
-			//txtPassword.Text = HINT_PASSWORD;
+			txtPassword.Password = HINT_PASSWORD;
 		}
 
 		private void txtUsuario_GotFocus(object sender, RoutedEventArgs e)
@@ -39,13 +39,12 @@ namespace MaquetaATT
 
 		private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
 		{
-			txtPassword.Clear(); 
+			if(txtPassword.Password == HINT_PASSWORD )  txtPassword.Clear(); 
 		}
 
 		private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
 		{
-			txtPassword.Pas
-			//if (txtPassword.Text == "") { txtPassword.Text = HINT_PASSWORD; }
+			if(txtPassword.Password == "" ) { txtPassword.Password = HINT_PASSWORD; }
 		}
 
 		private void imgLogo_Loaded(object sender, RoutedEventArgs e)

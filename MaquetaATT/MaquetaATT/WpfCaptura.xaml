@@ -4,19 +4,111 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MaquetaATT"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="WpfCaptura" 
-        Height="600" Width="1000" MinHeight="600" MinWidth="800">
+        Height="600" Width="1200" MinHeight="600" MinWidth="1000"
+        >
     <DockPanel HorizontalAlignment="Stretch" Width="Auto">
-        <StackPanel Margin="20,20" HorizontalAlignment="Stretch" Width="Auto" >
-            <DockPanel Margin="10,10">
-                <Label FontSize="18" VerticalAlignment="Center">Cliente: </Label>
-                <UniformGrid Columns="3" Width="Auto" HorizontalAlignment="Stretch">
-                    <TextBox Name="txtClienteAp1" Grid.Column="0" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center" FontSize="18" GotFocus="txtClienteAp1_GotFocus" LostFocus="txtClienteAp1_LostFocus"/>
-                    <TextBox Name="txtClienteAp2" Grid.Column="1" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center"  FontSize="18" GotFocus="txtClienteAp2_GotFocus" LostFocus="txtClienteAp2_LostFocus"/>
-                    <TextBox Name="txtClienteNombres" Grid.Column="2" Width="Auto" HorizontalAlignment="Stretch" Margin="10"  TextAlignment="Center" FontSize="18" GotFocus="txtClienteNombres_GotFocus" LostFocus="txtClienteNombres_LostFocus"/>
-                </UniformGrid>
-            </DockPanel>            
-        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20,20" HorizontalAlignment="Stretch" Width="Auto" >
+                <GroupBox Header="Nombre">
+                    <DockPanel Margin="10,10">
+                        <Label FontSize="16" VerticalAlignment="Center">Cliente:</Label>
+                        <UniformGrid Columns="3" Width="Auto" HorizontalAlignment="Stretch">
+                            <TextBox Name="txtClienteAp1" Grid.Column="0" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center" FontSize="16" GotFocus="txtClienteAp1_GotFocus" LostFocus="txtClienteAp1_LostFocus"/>
+                            <TextBox Name="txtClienteAp2" Grid.Column="1" Width="Auto" HorizontalAlignment="Stretch" Margin="10" TextAlignment="Center"  FontSize="16" GotFocus="txtClienteAp2_GotFocus" LostFocus="txtClienteAp2_LostFocus"/>
+                            <TextBox Name="txtClienteNombres" Grid.Column="2" Width="Auto" HorizontalAlignment="Stretch" Margin="10"  TextAlignment="Center" FontSize="16" GotFocus="txtClienteNombres_GotFocus" LostFocus="txtClienteNombres_LostFocus"/>
+                        </UniformGrid>
+                    </DockPanel>
+                </GroupBox>
+                <GroupBox Header="Contacto">
+                    <StackPanel>
+                        <DockPanel Margin="10,10">
+                            <UniformGrid Columns="5">
+                                <DockPanel  HorizontalAlignment="Stretch">
+                                    <Label Margin="0,10"  Grid.Column="0" FontSize="16">Celular:</Label>
+                                    <TextBox Name="txtNumCelular" FontSize="16" HorizontalAlignment="Stretch" Width="Auto" Margin="10" MinWidth="100"></TextBox>
+                                </DockPanel>
+                                <DockPanel  HorizontalAlignment="Stretch">
+                                    <Label Margin="0,10"  Grid.Column="0" FontSize="16">Fijo:</Label>
+                                    <TextBox Name="txtNumFijoLada" FontSize="16" HorizontalAlignment="Stretch" Width="35" Margin="5,10" GotFocus="txtNumFijoLada_GotFocus" LostFocus="txtNumFijoLada_LostFocus" ></TextBox>
+                                    <TextBox Name="txtNumFijoNumero" FontSize="16" HorizontalAlignment="Stretch" Width="Auto" Margin="5,10" MinWidth="90"></TextBox>
+                                </DockPanel>
+                                <DockPanel  HorizontalAlignment="Stretch">
+                                    <Label Margin="0,10"  Grid.Column="0" FontSize="16">Equipo</Label>
+                                    <TextBox  FontSize="16" HorizontalAlignment="Stretch" Width="Auto" Margin="5,10" MinWidth="100"></TextBox>
+                                </DockPanel>
+                                <DockPanel  HorizontalAlignment="Stretch">
+                                    <Label Margin="0,10"  Grid.Column="0" FontSize="16">Plan</Label>
+                                    <TextBox Name="txtPlan" FontSize="16" HorizontalAlignment="Stretch" Width="Auto" Margin="5,10" MinWidth="100"></TextBox>
+                                </DockPanel>
+                                <DockPanel  HorizontalAlignment="Stretch">
+                                    <Label Margin="10"  Grid.Column="0" FontSize="16">No. Lineas</Label>
+                                    <ComboBox Name="cmbNumeroLineas" Margin="5,10" Loaded="ComboBox_Loaded"></ComboBox>
+                                </DockPanel>
+                            </UniformGrid>
+                        </DockPanel>
+                        <DockPanel Margin="10,10">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <Label FontSize="16" Margin="5,10" >CP:</Label>
+                                <ComboBox Name="cmbCP" HorizontalAlignment="Stretch" MinWidth="70" Margin="5,10" FontSize="16"/>
+                            </DockPanel>
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <Label FontSize="16" Margin="5,10">Colonia:</Label>
+                                <ComboBox Name="cmbColonia" HorizontalAlignment="Stretch" Margin="5,10" MinWidth="150"/>
+                            </DockPanel>
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <Label FontSize="16" Margin="5,10">Calle:</Label>
+                                <TextBox HorizontalAlignment="Stretch" FontSize="16" Margin="5,10" MinWidth="350"></TextBox>
+                            </DockPanel>
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <Label Margin="5,10" FontSize="16">Num:</Label>
+                                <UniformGrid HorizontalAlignment="Stretch" Columns="2">
+                                    <TextBox Name="txtNumExt" HorizontalAlignment="Stretch" Margin="5,10" />
+                                    <TextBox Name="txtNumInt" HorizontalAlignment="Stretch" Margin="5,10" />
+                                </UniformGrid>
+                            </DockPanel>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Cita">
+                    <StackPanel>
+                    <UniformGrid HorizontalAlignment="Stretch" Columns="5">
+                        <DockPanel Grid.Column="0">
+                            <Label FontSize="16" Margin="5,10">Dia:</Label>
+                            <DatePicker HorizontalAlignment="Stretch" FontSize="16" IsDropDownOpen="True" SelectedDateFormat="Long" Margin="5,10"/>
+                        </DockPanel>
+                        <DockPanel Grid.Column="1">
+                            <Label FontSize="16" Margin="5,10">Desde:</Label>
+                            <ComboBox Name="cmbDesdeHora" MinWidth="50" Margin="5,10" FontSize="16"/>
+                            <Label FontSize="16" Margin="1,10">:</Label>
+                            <ComboBox Name="cmbDesdeMinuto" MinWidth="50" Margin="5,10" FontSize="16"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label FontSize="16" Margin="5,10">Hasta:</Label>
+                            <ComboBox Name="cmbHastaHora" MinWidth="50" Margin="5,10" FontSize="16"/>
+                            <Label FontSize="16" Margin="1,10">:</Label>
+                            <ComboBox Name="cmbHastaMinuto" MinWidth="50" Margin="5,10" FontSize="16"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Margin="5,10" FontSize="16">TMK:</Label>
+                            <ComboBox Margin="5,10" Name="cmbTmk" FontSize="16"></ComboBox>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Margin="5,10" FontSize="16">PS:</Label>
+                            <ComboBox Margin="5,10" Name="cmbPs" FontSize="16"></ComboBox>
+                        </DockPanel>                        
+                    </UniformGrid>
+                        <StackPanel>
+                            <DockPanel>
+                                <Label FontSize="16" Margin="5,10"> Tipo de cita:</Label>
+                                <ComboBox Name="cmbTipoCita" Margin="5,10"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
     </DockPanel>
 </Window>
