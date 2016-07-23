@@ -77,7 +77,7 @@
                     <UniformGrid HorizontalAlignment="Stretch" Columns="5">
                         <DockPanel Grid.Column="0">
                             <Label FontSize="16" Margin="5,10">Dia:</Label>
-                            <DatePicker HorizontalAlignment="Stretch" FontSize="16" IsDropDownOpen="True" SelectedDateFormat="Long" Margin="5,10"/>
+                            <DatePicker HorizontalAlignment="Stretch" FontSize="16" SelectedDateFormat="Long" Margin="5,10"/>
                         </DockPanel>
                         <DockPanel Grid.Column="1">
                             <Label FontSize="16" Margin="5,10">Desde:</Label>
